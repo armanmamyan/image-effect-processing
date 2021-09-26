@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <main class="image--filter-container">
+      <div class="imageCanvasCol">
+        <canvas id="imageCanvas"></canvas>
+        <div class="filter--control-grid">
+          <div class="filter--control-group" data-type = 'grayscale'>
+            <canvas id="grayscaleCanvas" class="filter--control-canvas"></canvas>
+            <span class="filter--control-label">Grayscale</span>
+          </div>
+          <div class="filter--control-group" data-type = 'inversion'>
+            <canvas id="inversionCanvas" class="filter--control-canvas"></canvas>
+            <span class="filter--control-label">Invert</span>
+          </div>
+          <div data-type = 'sepia' class="filter--control-group" >
+            <canvas id="sepiaCanvas" class="filter--control-canvas"></canvas>
+            <span class="filter--control-label">Sepia</span>
+          </div>
+      </div>
+      </div>
+      <aside class="image--filter-control-container">
+        <div class="flex">
+          <label for="combine" class="filter--control-name">Combine Effects</label>
+          <input type="checkbox" id="combine" name="combine" />
+        </div>
+        <div class="filter--control-group">
+          <label for="" class="filter--control-name">Brightness</label>
+          <input type="range" min="-100" max="100" value="0" name='brightness' class="filter--control-input" />
+        </div>
+        <div class="filter--control-group">
+          <label for="" class="filter--control-name">Contrast</label>
+          <input type="range" min="0" max="255" value="0" name='contrast' class="filter--control-input" />
+        </div>
+        <div class="filter--control-group">
+          <label for="" class="filter--control-name">Saturate</label>
+          <input type="range" min="0" max="100" value="0" name="saturation" class="filter--control-input" />
+        </div>
+        <div class="filter--control-group">
+          <label class="filter--control-name">Gradient</label>
+          <div class="flex gradient--input-group">
+              <input type="color" id="head" name="head"
+              value="#e66465">
+              <input type="color" id="body" name="body"
+              value="#f6b73c">
+              <button id="applyGradient" data-type = 'gradient' class="submit--btn">Apply</button>
+          </div>
+        </div>
+        <div class="filter--control-group">
+          <label class="filter--control-name">Glitch Effect</label>
+          <div class="flex_column gradient--input-group gradient--input_glitch">
+            <div class="flex_column">
+              <label for="rOffset">Red offset</label>
+              <input id="rOffset" type="range" min="-100" max="100" step="5" class="mb-2" />
+            </div>
+            <div class="flex_column">
+              <label for="gOffset">Green offset</label>
+              <input id="gOffset" type="range" min="-100" max="100" step="5" class="mb-2" />
+            </div>
+            <div class="flex_column">
+              <label for="bOffset">Blue offset</label>
+              <input id="bOffset" type="range" min="-100" max="100" step="5" class="mb-2" />
+            </div>
+          </div>
+        </div>
+        <div class="buttons">
+          <button id="resetBtn" class="custom--btn">Reset Changes</button>
+          <div class="file--wrapper">
+            <button class="custom--btn btn--file">Choose File</button>
+            <input id="fileId" type="file" class="upload--photo"> 
+          </div>
+        </div>
+      </aside>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>

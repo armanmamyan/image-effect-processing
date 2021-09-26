@@ -1,0 +1,163 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    margin: 0;
+    width: 100%;
+}
+
+.image--filter-container{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px;
+    width: 100%;
+    margin: 50px auto;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+    padding: 20px;
+}
+
+#imageCanvas{
+    width: 100%;
+    height: 550px;
+    border: 1px solid rgb(0 0 0 / 15%);
+    border-radius: 5px;
+    image-rendering: pixelated;
+}
+
+.imageCanvasCol{
+    width: calc(100% - 30%);
+}
+
+.image--filter-control-container{
+    align-self: flex-start;
+    flex: 0 0 25%;
+    width: 25%;
+    margin-inline-start:  16px;
+    
+}
+
+.filter--control-group{
+    display: flex;
+    flex-direction: column; 
+    padding: 8px 0;
+}
+
+.image--filter-control-container > div + div:not(:last-child){
+    margin-top: 24px;
+    border-top: 1px solid #eee;
+}
+
+.sourceImage{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 25%);
+    height: 550px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.filter--control-canvas{
+    width: 100%;
+    height: 120px;
+    border: 1px solid #dee2e6;
+    margin: 0 auto;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.filter--control-label{
+    display: block;
+    text-align: center;
+    padding: 4px;
+}
+
+.filter--control-grid{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.filter--control-grid .filter--control-group{
+    flex: 0 0 33.333334%;
+    cursor: pointer;
+    padding: 8px 15px;
+}
+
+.custom--btn{
+    display: block;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: 0;
+    border-radius: 5px;
+    border-width: 1px;
+    padding: 8px 12px;
+    box-shadow: none;
+    background-color: transparent;
+    margin-bottom: 12px;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.custom--btn:hover,
+#fileId:hover{
+    background-color: #00aaff;
+    border-color: transparent;
+    color: #fff;
+}
+
+.file--wrapper{
+    position: relative;
+}
+
+#fileId{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.btn--file{
+    position: relative;
+    z-index: 12;
+    margin-left: 8px;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+}
+
+.applyGradient{
+    align-self: stretch;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex_column{
+    display: flex;
+    flex-direction: column;
+}
+
+.gradient--input-group{
+    margin-top: 8px;
+}
+
+.gradient--input-group > * {
+    margin-right: 8px;
+}
+
+.gradient--input_glitch input{
+        margin: 0;
+        margin-block-end: 16px;
+}
